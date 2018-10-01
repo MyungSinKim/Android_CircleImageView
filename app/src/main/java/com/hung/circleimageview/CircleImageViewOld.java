@@ -71,6 +71,7 @@ public class CircleImageViewOld extends AppCompatImageView {
 //        super.onDraw(canvas);
         Log.e("TAG", "=======================aaaaaaaaaaa" );
         //getDrawable(): trả về android:src="@drawable/test_image  với kích thước thực (ko phải kích thước của ImageView)
+        // vi the phai Scale image moi dc
         Bitmap bitmap = circleBitmap(scaleBitmap(getBitmapFromDrawable(getDrawable())));
         canvas.drawBitmap(bitmap, 0, 0, null);
         //
