@@ -11,8 +11,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //
-        CircleImageView  newView = findViewById(R.id.img_new);
-        newView.setImageDrawable(getResources().getDrawable(R.drawable.test_image));
+        CircleImageView  newView = findViewById(R.id.img_new2);
+        newView.setImageDrawable(getResources().getDrawable(R.drawable.trump));
         //
         CircleImageViewOld oldView = findViewById(R.id.img_old);
 

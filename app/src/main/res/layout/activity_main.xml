@@ -7,21 +7,39 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- use default Image = user.png-->
     <com.hung.circleimageview.CircleImageView
         android:id="@+id/img_new"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:layout_centerHorizontal="true"
+        app:civ_border_width_new="2dp"
+        app:civ_border_color_new="#f23716"/>
+    <!-- set Image for customView via Custom attribute-->
+    <com.hung.circleimageview.CircleImageView
+        android:id="@+id/img_new1"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_toRightOf="@+id/img_new"
+        app:civ_image_new="@drawable/test_image"
+        app:civ_border_width_new="2dp"
+        app:civ_border_color_new="#f23716"/>
 
-        app:civ_border_width="2dp"
-        app:civ_border_color="#f23716"/>
-
-    <com.hung.circleimageview.CircleImageViewOld
-        android:id="@+id/img_old"
+    <!-- set Image in source code: MainActivity-->
+    <com.hung.circleimageview.CircleImageView
+        android:id="@+id/img_new2"
         android:layout_below="@+id/img_new"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:layout_marginTop="30dp"
+        app:civ_border_width_new="2dp"
+        app:civ_border_color_new="#f23716"/>
+
+    <!-- extend ImageView -->
+    <com.hung.circleimageview.CircleImageViewOld
+        android:id="@+id/img_old"
+        android:layout_below="@+id/img_new2"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"

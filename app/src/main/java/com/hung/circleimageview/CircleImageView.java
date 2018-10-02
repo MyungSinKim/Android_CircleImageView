@@ -28,9 +28,8 @@ public class CircleImageView extends View {
     private int mBorderColor = DEFAULT_BORDER_COLOR;
     private int mBorderWidth = DEFAULT_BORDER_WIDTH;
 
-    Paint mPaint;
-    Bitmap mBitmapSrc;
-    Canvas mCanvasSrc;
+    private Bitmap mBitmapSrc;
+
 
     public CircleImageView(Context context) {
         super(context);
@@ -43,14 +42,18 @@ public class CircleImageView extends View {
     public CircleImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        // declare custome Attribute
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircleImageView, 0, 0);
+        // declare custome Attribute: /res/values/attrs.xml
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircleImageViewNew, 0, 0);
 
-        // Phần Source code lấy Attribute hiện tại ko dùng đến
+
         try {
             // get custom attribute from Layout of this ImageView
-            mBorderWidth = a.getDimensionPixelSize(R.styleable.CircleImageView_civ_border_width, DEFAULT_BORDER_WIDTH);
-            mBorderColor = a.getColor(R.styleable.CircleImageView_civ_border_color, DEFAULT_BORDER_COLOR);
+            int imageDrawableId = a.getResourceId(R.styleable.CircleImageViewNew_civ_image_new, R.drawable.user);
+            Drawable drawable = getResources().getDrawable(imageDrawableId);
+            mBitmapSrc = getBitmapFromDrawable(drawable);
+            // Phần Source code lấy Attribute hiện tại ko dùng đến
+            mBorderWidth = a.getDimensionPixelSize(R.styleable.CircleImageViewNew_civ_border_width_new, DEFAULT_BORDER_WIDTH);
+            mBorderColor = a.getColor(R.styleable.CircleImageViewNew_civ_border_color_new, DEFAULT_BORDER_COLOR);
         } finally {
             a.recycle();
         }
